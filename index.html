@@ -1026,7 +1026,25 @@
             backToTopButton.classList.remove('flex');
         }
     });
+  const infoBtns = document.querySelectorAll('.info-btn');
+
+  infoBtns.forEach(btn => {
+    const card = btn.nextElementSibling; // the info-box div
+
+    btn.addEventListener('mouseenter', () => {
+      card.classList.remove('hidden');
+    });
+    btn.addEventListener('mouseleave', () => {
+      card.classList.add('hidden');
+    });
+
+    // Also hide card if mouse leaves the card itself
+    card.addEventListener('mouseenter', () => card.classList.remove('hidden'));
+    card.addEventListener('mouseleave', () => card.classList.add('hidden'));
+  });
+
 </script>
+
 
 
 
