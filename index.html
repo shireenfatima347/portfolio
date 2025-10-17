@@ -20,10 +20,23 @@
             color: transparent;
         }
         
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
+       .project-card {
+  position: relative; /* make parent relative */
+}
+
+.info-box {
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  z-index: 1000; /* ensure it’s above other cards */
+  display: none; /* hide by default */
+}
+
+.info-box.show {
+  display: block;
+}
         
         .skill-card:hover {
             border-color: #2563eb;
@@ -1055,6 +1068,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
 
 
 
