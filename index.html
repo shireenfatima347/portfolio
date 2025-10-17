@@ -20,24 +20,10 @@
             color: transparent;
         }
         
-       .project-card {
-  position: relative; /* parent for absolute positioning */
-  overflow: visible;  /* allow info-box to overflow */
-}
-
-.info-box {
-  display: none;       /* hidden by default */
-  position: absolute;  /* absolute within card */
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;       /* on top of other cards */
-}
-
-.info-box.show {
-  display: block;      /* show when clicked */
-}
-
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
         
         .skill-card:hover {
             border-color: #2563eb;
@@ -383,22 +369,21 @@
                             <span class="text-xs px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">Google Maps API</span>
                             <span class="text-xs px-2 py-1 bg-blue-100 dark:bg-yellow-900 text-blue-800 dark:text-blue-200 rounded-full">Git & GitHub</span>                            
                         </div>
-                        <div class="flex space-x-3">
-      <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded">View Source</a>
-      <a href="#" class="px-4 py-2 bg-gray-800 text-white rounded">Live Demo</a>
-      <button class="info-btn px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded">Info</button>
-    </div>
-  </div>
+                        <div class="flex flex-wrap gap-3 relative project-buttons">
+      <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">View Source Code</a>
+      <a href="#" class="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition">Live Demo</a>
+      <button class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-400 dark:hover:bg-gray-500 transition info-btn">Info</button>
 
-  <!-- Info Box -->
-  <div class="info-box absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-72 p-4 bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg hidden z-50">
-    <p class="text-gray-800 dark:text-gray-200 text-sm">
-      <strong>Technologies:</strong> HTML5, CSS3, JS, AI/ML<br>
-      <strong>Description:</strong> Suggests recipes based on user dietary preferences.
-    </p>
-  </div>
+      <!-- Info Box -->
+      <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-72 p-4 bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg hidden info-box z-50">
+        <p class="text-gray-800 dark:text-gray-200 text-sm">
+          <strong>Technologies:</strong> HTML5, CSS3, JavaScript, AI/ML<br>
+          <strong>Description:</strong> Suggests recipes based on user dietary preferences using AI/ML.
+        </p>
       </div>
 </div>
+                    </div>
+                </div>
                 
                 <!-- Project 2 -->
                 <div class="project-card bg-white dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
@@ -1068,18 +1053,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Clicking inside the box doesn’t hide it
     infoBox.addEventListener('click', e => e.stopPropagation());
   });
-});document.querySelectorAll(".info-btn").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    const card = e.target.closest(".project-card");
-    const infoBox = card.querySelector(".info-box");
-    infoBox.classList.toggle("show");
-  });
 });
-
 </script>
-
-
-
 
 
 
