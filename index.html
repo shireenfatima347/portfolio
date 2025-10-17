@@ -383,7 +383,7 @@
     Info
   </button>
 
-  <!-- Info Card (hidden by default) -->
+  <!-- Info Card -->
   <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-72 p-4 bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg hidden info-box z-50">
     <p class="text-gray-800 dark:text-gray-200 text-sm">
       <strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6), AI/ML Algorithms, JSON, Bootstrap, Git & GitHub<br>
@@ -1042,8 +1042,29 @@
     card.addEventListener('mouseenter', () => card.classList.remove('hidden'));
     card.addEventListener('mouseleave', () => card.classList.add('hidden'));
   });
+    
 
+</script><script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const infoBtn = document.querySelector('.info-btn');
+    const infoBox = document.querySelector('.info-box');
+
+    infoBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent click from closing immediately
+      infoBox.classList.toggle('hidden');
+    });
+
+    // Click outside to hide
+    document.addEventListener('click', () => {
+      infoBox.classList.add('hidden');
+    });
+
+    // Prevent hiding when clicking inside the info box
+    infoBox.addEventListener('click', (e) => e.stopPropagation());
+  });
 </script>
+
+
 
 
 
