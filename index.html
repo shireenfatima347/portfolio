@@ -369,28 +369,18 @@
                             <span class="text-xs px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">Google Maps API</span>
                             <span class="text-xs px-2 py-1 bg-blue-100 dark:bg-yellow-900 text-blue-800 dark:text-blue-200 rounded-full">Git & GitHub</span>                            
                         </div>
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/shireenfatima347/RideRate-Smart-Cab-Fare-Comparator.git" target="_blank"
-                                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                                View Source Code
-                            </a>
-                            <a href="https://shireenfatima347.github.io/RideRate-Smart-Cab-Fare-Comparator/" target="_blank"
-                                class="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition">
-                                Live Demo
-                            </a>
-                            <!-- Info Button -->
-  <button class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-400 dark:hover:bg-gray-500 transition info-btn">
-    Info
-  </button>
+                        <div class="flex flex-wrap gap-3 relative project-buttons">
+  <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">View Source Code</a>
+  <a href="#" class="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition">Live Demo</a>
+  <button class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-400 dark:hover:bg-gray-500 transition info-btn">Info</button>
 
-  <!-- Info Card -->
   <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-72 p-4 bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg hidden info-box z-50">
     <p class="text-gray-800 dark:text-gray-200 text-sm">
-      <strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6), AI/ML Algorithms, JSON, Bootstrap, Git & GitHub<br>
-      <strong>Description:</strong> Suggests recipes based on user dietary preferences using AI/ML, with interactive UI and data storage in JSON.
+      <strong>Technologies:</strong> HTML, CSS, JS<br>
+      <strong>Description:</strong> Info about the project goes here.
     </p>
   </div>
-                        </div>
+</div>
                     </div>
                 </div>
                 
@@ -1043,29 +1033,28 @@
     card.addEventListener('mouseleave', () => card.classList.add('hidden'));
   });
 document.addEventListener('DOMContentLoaded', () => {
-  // Select all project buttons containers
-  const projectContainers = document.querySelectorAll('.project-buttons');
+  const containers = document.querySelectorAll('.project-buttons');
 
-  projectContainers.forEach(container => {
+  containers.forEach(container => {
     const infoBtn = container.querySelector('.info-btn');
     const infoBox = container.querySelector('.info-box');
 
-    // Toggle info box on click
-    infoBtn.addEventListener('click', (e) => {
+    infoBtn.addEventListener('click', e => {
       e.stopPropagation();
       infoBox.classList.toggle('hidden');
     });
 
-    // Clicking outside hides the info box
+    // Click outside hides the box
     document.addEventListener('click', () => {
       infoBox.classList.add('hidden');
     });
 
-    // Clicking inside info box does not hide
+    // Clicking inside the box doesn’t hide it
     infoBox.addEventListener('click', e => e.stopPropagation());
   });
 });
 </script>
+
 
 
 
