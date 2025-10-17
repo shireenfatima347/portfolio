@@ -1042,27 +1042,31 @@
     card.addEventListener('mouseenter', () => card.classList.remove('hidden'));
     card.addEventListener('mouseleave', () => card.classList.add('hidden'));
   });
-    
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all project buttons containers
+  const projectContainers = document.querySelectorAll('.project-buttons');
 
-</script><script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const infoBtn = document.querySelector('.info-btn');
-    const infoBox = document.querySelector('.info-box');
+  projectContainers.forEach(container => {
+    const infoBtn = container.querySelector('.info-btn');
+    const infoBox = container.querySelector('.info-box');
 
+    // Toggle info box on click
     infoBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent click from closing immediately
+      e.stopPropagation();
       infoBox.classList.toggle('hidden');
     });
 
-    // Click outside to hide
+    // Clicking outside hides the info box
     document.addEventListener('click', () => {
       infoBox.classList.add('hidden');
     });
 
-    // Prevent hiding when clicking inside the info box
-    infoBox.addEventListener('click', (e) => e.stopPropagation());
+    // Clicking inside info box does not hide
+    infoBox.addEventListener('click', e => e.stopPropagation());
   });
+});
 </script>
+
 
 
 
